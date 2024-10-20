@@ -1,520 +1,108 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Your Closet</title>-->
+<!--    <link rel="stylesheet" href="/style/styles.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="container">-->
+<!--    <header class="top-bar">-->
+<!--        <h1>Your closet</h1>-->
+<!--        <button class="add-btn">+</button>-->
+<!--    </header>-->
+
+<!--    <div class="tabs">-->
+<!--        <button class="tab active">All</button>-->
+<!--        <button class="tab">Shirts</button>-->
+<!--        <button class="tab">Layers</button>-->
+<!--        <button class="tab">Pants</button>-->
+<!--        <button class="tab">Shoes</button>-->
+<!--        <button class="tab">Accessories</button>-->
+<!--    </div>-->
+
+<!--    <div class="content">-->
+<!--        <div class="message-box">-->
+<!--            <p class="empty-message">Nothing here. For now.</p>-->
+<!--            <p class="sub-message">This is where you’ll find your closet.</p>-->
+<!--            <button class="add-clothes-btn">+ Add your clothes</button>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</div>-->
+
+<!--<nav class="bottom-nav">-->
+<!--    <button class="nav-item active">-->
+<!--        <div class="icon wardrobe-icon"></div>-->
+<!--        <span>Wardrobe</span>-->
+<!--    </button>-->
+<!--    <button class="nav-item">-->
+<!--        <div class="icon home-icon"></div>-->
+<!--        <span>Home</span>-->
+<!--    </button>-->
+<!--    <button class="nav-item">-->
+<!--        <div class="icon profile-icon"></div>-->
+<!--        <span>Profile</span>-->
+<!--    </button>-->
+<!--</nav>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registration Form</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;700&display=swap" rel="stylesheet">
+    <title>Your Closet</title>
+    <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
-    <div class="background-img ">
-        <div class="back">
-            <div class="container">
-                 <header class="header">
-                     <nav>
-                        <ul class="nav-links">
-                            <li>
-                                <a href="#">Home</a>
-                            </li>
-                            <li>
-                                <a href="#">About</a>
-                            </li>
-                            <li>
-                                <a href="#">Blog</a>
-                            </li>
-                            <li>
-                                <a href="#">Pages</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact</a>
-                            </li>
-                            <li>
-                                <a href="#">Cart(0)</a>
-                            </li>
-                            <li>
-                                <a href="#" class="quote-btn">Get a quote</a>
-                            </li>
-                        </ul>
-                     </nav>
-                 </header>
+<div class="container">
+    <header class="top-bar">
+        <h1>Your closet</h1>
+        <button class="add-btn" onclick="addClothes()">+</button>
+    </header>
 
-                <section class="hero">
-                    <div class="hero-text">
-                        <h1>We provide effective contracting services</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit varius rhoncus, nullam pulvinar ut sollicitudin dictumst porttitor porttitor quis quisque erat.</p>
-                        <div class="buttons">
-                            <a href="#" class="quote-btn1">Get a quote</a>
-                            <a href="#" class="service-btn">Our service </a>
-                        </div>
-                    </div>
-                </section>
+    <div class="tabs">
+        <button class="tab active">All</button>
+        <button class="tab">Shirts</button>
+        <button class="tab">Layers</button>
+        <button class="tab">Pants</button>
+        <button class="tab">Shoes</button>
+        <button class="tab">Accessories</button>
+    </div>
 
-            </div>
-
-
-
+    <div class="content" id="content">
+        <div class="message-box" id="emptyState">
+            <p class="empty-message">Nothing here. For now.</p>
+            <p class="sub-message">This is where you’ll find your closet.</p>
+            <button class="add-clothes-btn" onclick="addClothes()">+ Add your clothes</button>
+        </div>
+        <div class="clothes-grid hidden" id="clothesGrid">
+            <!-- Example loaded state -->
+        </div>
+        <div class="loading-grid hidden" id="loadingGrid">
+            <!-- Placeholder elements for loading -->
         </div>
     </div>
-
-
-    <div class="container">
-        <section class="about-us">
-            <div class="about-img">
-                <img src="assets/main.svg" alt="">
-            </div>
-            <div class="about-info">
-                <p class="title">/About us</p>
-                <h2 class="infoTit">A team of reliable and experienced contractors</h2>
-                <div class="text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit tristique imperdiet nisi metus, viverra nulla aliquet dui porta porttitor neque lectus diam justo lobortis purus in elit, elementum dignissim nullam vitae pellentesque aliquet aliquam sagittis pulvinar egestas morbi suspendisse eleifend.
-                </div>
-                <div class="statics">
-                    <div>
-                        <img src="assets/Frame.svg" alt="">
-                    </div>
-                    <div >
-                        <img src="assets/frame2.svg" alt="">
-                    </div>
-                    <div >
-                        <img src="assets/frame3.svg" alt="">
-                    </div>
-                </div>
-                <div class="btn">
-                    <button>About our company</button>
-                </div>
-            </div>
-        </section>
-
-
-
-        <section class="main">
-            <div class="main-section">
-                <div class="our-services">
-                    <div class="service-info">
-                        <p class="service-title">
-                            /OUR SERVICES
-                        </p>
-                        <h3 class="service-text">
-                            A comprehensive set of services
-                        </h3>
-                    </div>
-                    <div class="our-services-btn" >
-                        <a class="quote-btn1"> Get a quote</a>
-                        <button>Browse Services</button>
-                    </div>
-                </div>
-
-                <div class="service-flex">
-                    <div class="services">
-                        <img src="assets/icon1.svg" alt="">
-                        <h3> Project Planning</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quis eget morbi fermentum sagittis, et mi lacus ornare tincidunt id.</p>
-                        <a class="learn-more">Learn more</a>
-                    </div>
-
-                    <div class="services">
-                        <img src="assets/icon2.svg" alt="">
-                        <h3> Project Management</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quis eget morbi fermentum sagittis, et mi lacus ornare tincidunt id.</p>
-                        <a class="learn-more">Learn more</a>
-                    </div>
-
-                    <div class="services">
-                        <img src="assets/icon3.svg" alt="">
-                        <h3>General Contracting</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quis eget morbi fermentum sagittis, et mi lacus ornare tincidunt id.</p>
-                        <a class="learn-more">Learn more</a>
-                    </div>
-
-                    <div class="services">
-                        <img src="assets/icon4.svg" alt="">
-                        <h3>Interior Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quis eget morbi fermentum sagittis, et mi lacus ornare tincidunt id.</p>
-                        <a class="learn-more">Learn more</a>
-                    </div>
-
-                    <div class="services">
-                        <img src="assets/icon5.svg" alt="">
-                        <h3>Exterior Design</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quis eget morbi fermentum sagittis, et mi lacus ornare tincidunt id.</p>
-                        <a class="learn-more">Learn more</a>
-                    </div>
-
-                    <div class="services">
-                        <img src="assets/icon6.svg" alt="">
-                        <h3>Space Planning</h3>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit quis eget morbi fermentum sagittis, et mi lacus ornare tincidunt id.</p>
-                        <a class="learn-more">Learn more</a>
-                    </div>
-
-                </div>
-
-            </div>
-        </section>
-
-    </div>
-
-    <div class="margo">
-        <div class="stay">
-            <div class="questions">
-                <h1>Ready to pull the trigger?<br>Get a quote today.</h1>
-            </div>
-            <div class="texts">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit dolor sit varius rhoncus, nullam pulvinar ut sollicitudin dictumst porttitor porttitor quis.</p>
-            </div>
-
-            <div class="buttons2">
-                <a href="#" class="quote-btn1">Get a quote</a>
-                <a href="#" class="service-btn1">Our service </a>
-            </div>
-        </div>
-    </div>
-
-
-    <div class="container back-image" >
-        <section>
-            <div class="choose-first-info">
-                <div class="choose-us-image">
-                    <img class="wokers" src="assets/worker.svg" alt="" >
-                </div>
-                <div class="choose-info">
-                    <p class="choose-title">/WHY CHOOSE US</p>
-                    <h3 class="choose-idea">An exceptional quality that can't be beaten</h3>
-                    <p class="choose-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit tristique rutrum leo quam consectetur urna egestas tincidunt facilisi neque elementum quis lorem posuere dignissim scelerisque aliquam.</p>
-                    <div class="paragraphs">
-                        <div class="par-1">
-                            <img src="assets/galochka.svg" alt="">
-                            <p>Over 15 years of experience</p>
-                        </div>
-                        <div class="par-2">
-                            <img src="assets/galochka.svg" alt="">
-                            <p>200+ successfully executed projects</p>
-                        </div>
-                        <div class="par-3">
-                            <img src="assets/galochka.svg" alt="">
-                            <p>Exceptional work quality</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <div class="choose-second-info">
-                <div class="choose-texts">
-                    <h2>We help you build on your past and prepare for the future</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit dictum nam arcu ac eu orci purus amet eros, id lorem aliquet eget urna at risus sit purus ac magnis blandit eu egestas imperdiet libero.</p>
-                    <div class="stats">
-                        <div class="stat-item">
-                            <span class="plus-sign">+</span><span class="stat-number">350</span>
-                            <p>Successful Projects</p>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-number">100</span><span class="percentage">%</span>
-                            <p>Client Satisfaction</p>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="choose-image">
-                    <img src="assets/baggage.svg">
-                </div>
-            </div>
-        </section>
-
-    </div>
-
-    <div class="container">
-        <section class="projects">
-            <div class="project-title">
-                <div class="infos">
-                    <p class="past-projects">/PAST PROJECTS</p>
-                    <h1>Our project results speak<br> for themselves</h1>
-                </div>
-
-                <div class="buttons-project">
-                    <button class="quote-button">Get a quote</button>
-                    <button class="services-button">Browse services</button>
-                </div>
-            </div>
-
-
-            <div class="project-cards">
-                <div class="card">
-                    <div class="project-card-back-img1">
-                        <div class="card-text">
-                            <h3>Building construction in <br>Los Angeles, CA</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lectus aenean sit elementum pellentesque ultrices sem.</p>
-                            <p class="project-type">Construction</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div class="project-card-back-img2">
-                        <div class="card-text">
-                            <h3>Kitchen remodeling in <br>Hollywood Hills, CA</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit lectus aenean sit elementum pellentesque ultrices sem.</p>
-                            <div class="with-vector">
-                                <img src="assets/vector.svg" alt="">
-                                <p class="project-type1">Remodeling</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="pagination">
-                <div class="square"></div>
-                <div class="square active"></div>
-            </div>
-
-        </section>
-
-
-
-
-
-        <section class="another-problem">
-            <div class="project-title">
-                <div class="infos">
-                    <p class="past-projects">/TESTIMONIALS</p>
-                    <h1>What our clients say about <br> us and our work</h1>
-                </div>
-                    <div class="pagination">
-                        <div class="square"></div>
-                        <div class="square active"></div>
-                    </div>
-            </div>
-
-
-            <div class="workers-page">
-                <div class="worker">
-                    <img src="assets/worker1.svg" alt="">
-                    <div class="worker-text">
-                        <h3>“A true team of expert contractors”</h3>
-                        <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis senectus non dui vel tortor. Justo lectus integer arcu elit.</p>
-                        <div class="name-surname-box">
-                            <div >
-                                <p>John Carter <br><span class="malibu">Malibu beach, CA</span> </p>
-
-                            </div>
-                            <div>
-                                <box></box>
-                            </div>
-
-                        </div>
-
-                    </div>
-                </div>
-                <div class="worker">
-                    <img src="assets/worker2.svg" alt="">
-                    <div class="worker-text">
-                        <h3>“A true team of expert contractors”</h3>
-                        <p class="texto">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Convallis senectus non dui vel tortor. Justo lectus integer arcu elit.</p>
-                        <div class="name-surname-box">
-                            <div class="po">
-                                <p >Lily Woods<br><span class="malibu" >Malibu beach, CA</span>  </p>
-
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-        <section class="another-problem2">
-            <div class="like-header">
-                <div class="blog">
-                    <h3>/Blog</h3>
-                    <p>Articles & News</p>
-                </div>
-                <div class="another-button-box">
-                    <button class="here-is-button">Browse articles</button>
-                </div>
-            </div>
-
-            <div class="articles-news">
-
-
-                <div class="big-image">
-                    <img src="assets/bed.svg" alt="">
-                    <p class="article-text">12 designers tricks for picking the perfect home color palette</p>
-                    <p class="article-date">June 17, 2022</p>
-                </div>
-                
-
-                <div class="many-images">
-                    <div class="many-image1">
-                        <img src="assets/article1.svg" alt="">
-                        <div>
-                            <p class="article-text">Paint trends 2022 - the 17 colors you need for the ultimate wonder walls</p>
-                            <p class="article-date">June 17, 2022</p>
-                        </div>
-
-                    </div>
-                    <div class="many-image1">
-                        <img src="assets/article2.svg" alt="">
-                        <div>
-                            <p class="article-text">Clever DIY home improvements you can do during the pandemic</p>
-                            <p class="article-date">June 17, 2022</p>
-                        </div>
-                    </div>
-                    <div class="many-image1">
-                        <img src="assets/article3.svg" alt="">
-                        <div>
-                            <p class="article-text">15 mind blowing floor designs to make your home look great</p>
-                            <p class="article-date">June 17, 2022</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-    </div>
-
-
-
-    <footer>
-        <div class="container">
-            <footer>
-                <div class="for">
-
-                    <div class="pre-footer">
-                        <div class="pre-footer-text color font-sizes" >
-                            Lorem ipsum dolor sit amet consectetur adipiscing elit.
-                        </div>
-                        <div class="cubses">
-                            <div class="cubes"></div>
-                            <div class="cubes"></div>
-                            <div class="cubes"></div>
-                            <div class="cubes"></div>
-                        </div>
-                    </div>
-
-                    <div class="menu color font-sizes">
-                        <p>
-                            Menu
-                        </p>
-                        <div class="pre-footer-links1 color font-sizes">
-                            <div>
-                                <p>Home</p>
-                                <p>About</p>
-                                <p>Blog</p>
-                                <p>Blog Post</p>
-                                <p>Services</p>
-                                <p>Services Single</p>
-
-                            </div>
-                            <div>
-                                <p>Shop</p>
-                                <p>Shop Single</p>
-                                <p>Projects</p>
-                                <p>Projects Single</p>
-                                <p>Contact</p>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-                    <div>
-                        <p class="color font-sizes">Utility Pages</p>
-                        <div class="pre-footer-links2 color font-sizes">
-                            <p>Start Here</p>
-                            <p>Password</p>
-                            <p>404 Not Found</p>
-                            <p>Licenses</p>
-                            <p>Styleguide</p>
-                            <p>Changelog</p>
-                            <p>More Webflow templates</p>
-                            <p></p>
-                        </div>
-                    </div>
-
-
-                    <div>
-                        <p class="color font-sizes">Contact Us</p>
-                        <div class="contacts color">
-
-
-                            <div class="cnt color">
-                                <div class="cnt-image">
-                                    <img src="assets/call.svg" alt="">
-                                </div>
-
-                                <div class="dannye color font-sizes">
-                                    <p>Call us <br>(323) 238-0682</p>
-                                </div>
-                            </div>
-
-
-
-                            <div class="cnt">
-                                <div class="cnt-image">
-                                    <img src="assets/email.svg" alt="">
-                                </div>
-
-                                <div class="dannye color font-sizes">
-                                    <p>Email us <br>info@contractor.com</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
-                <div class="final-footer color">
-                    <p style="color: #555555"> Copyright © Contractor X</p>
-                    <div class="final-footer-1">
-                        <p class="margin-right">Designed by</p>
-                        <p style="color: #FF4D01">BRIX Templates</p>
-                        <p class="margin-right">|Powered by</p>
-                        <p style="color: #FF4D01">Webflow</p>
-                    </div>
-                </div>
-
-
-
-            </footer>
-        </div>
-    </footer>
-
+</div>
+
+<nav class="bottom-nav">
+    <button class="nav-item active">
+        <div class="icon wardrobe-icon"></div>
+        <span>Wardrobe</span>
+    </button>
+    <button class="nav-item">
+        <div class="icon home-icon"></div>
+        <span>Home</span>
+    </button>
+    <button class="nav-item">
+        <div class="icon profile-icon"></div>
+        <span>Profile</span>
+    </button>
+</nav>
+
+<script src="counter.js"></script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
