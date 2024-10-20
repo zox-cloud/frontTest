@@ -3,48 +3,48 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Your Closet</title>
+  <title>Weather App</title>
   <link rel="stylesheet" href="style/home_style.css">
 </head>
 <body>
 <div class="container">
-  <header class="top-bar">
-    <div class="weather">
-    </div>
-  </header>
+  <div class="weather-card">
+    <div class="weather-info">
+      <div class="temperature">19&deg;</div>
+      <div class="details">
+        <div class="high-low">H:24&deg; L:18&deg;</div>
+        <div class="location">Almaty, Kazakhstan</div>
+
+      </div>
 
 
-
-  <div class="content" id="content">
-    <div class="message-box" id="emptyState">
-      <p class="empty-message">Nothing here. For now.</p>
-      <p class="sub-message">This is where you’ll find your closet.</p>
-      <button class="add-clothes-btn" onclick="addClothes()">+ Add your clothes</button>
     </div>
-    <div class="clothes-grid hidden" id="clothesGrid">
-      <!-- Example loaded state -->
-    </div>
-    <div class="loading-grid hidden" id="loadingGrid">
-      <!-- Placeholder elements for loading -->
-    </div>
+    <div class="condition">Clear</div>
   </div>
+
+
+</div>
+<div class="content">
+  <p class="empty-text">Nothing here. For now.</p>
+  <p class="sub-text">Please, add clothes to see your recommendations</p>
+  <button class="add-clothes-btn" onclick="addClothes()">+ Add your clothes</button>
 </div>
 
-<nav class="bottom-nav">
-  <button class="nav-item active">
-    <div class="icon wardrobe-icon"></div>
-    <span>Wardrobe</span>
-  </button>
-  <button class="nav-item">
-    <div class="icon home-icon"></div>
-    <span>Home</span>
-  </button>
-  <button class="nav-item">
-    <div class="icon profile-icon"></div>
-    <span>Profile</span>
-  </button>
-</nav>
+  <nav class="bottom-nav" id="bottomNav">
+    <button class="nav-item active" data-tab="wardrobe">
+      <div class="icon wardrobe-icon"></div>
+      <span>Wardrobe</span>
+    </button>
+    <button class="nav-item" data-tab="home">
+      <div class="icon home-icon"></div>
+      <span>Home</span>
+    </button>
+    <button class="nav-item" data-tab="profile">
+      <div class="icon profile-icon"></div>
+      <span>Profile</span>
+    </button>
+  </nav>
 
-<script src="counter.js"></script>
+<script src="homeJS.js"></script>
 </body>
 </html>
