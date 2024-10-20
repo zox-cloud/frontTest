@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Closet</title>
+  <link rel="stylesheet" href="style/home_style.css">
+</head>
+<body>
+<div class="container">
+  <header class="top-bar">
+    <div class="weather">
+    </div>
+  </header>
+
+
+
+  <div class="content" id="content">
+    <div class="message-box" id="emptyState">
+      <p class="empty-message">Nothing here. For now.</p>
+      <p class="sub-message">This is where you’ll find your closet.</p>
+      <button class="add-clothes-btn" onclick="addClothes()">+ Add your clothes</button>
+    </div>
+    <div class="clothes-grid hidden" id="clothesGrid">
+      <!-- Example loaded state -->
+    </div>
+    <div class="loading-grid hidden" id="loadingGrid">
+      <!-- Placeholder elements for loading -->
+    </div>
+  </div>
+</div>
+
+<nav class="bottom-nav">
+  <button class="nav-item active">
+    <div class="icon wardrobe-icon"></div>
+    <span>Wardrobe</span>
+  </button>
+  <button class="nav-item">
+    <div class="icon home-icon"></div>
+    <span>Home</span>
+  </button>
+  <button class="nav-item">
+    <div class="icon profile-icon"></div>
+    <span>Profile</span>
+  </button>
+</nav>
+
+<script src="counter.js"></script>
+</body>
+</html>
