@@ -1,0 +1,202 @@
+/* General body styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Add clothes form styles */
+.add-clothes-form {
+    background: #ffffff;
+    width: 100%;
+    max-width: 400px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Form header styles */
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 10px;
+}
+
+.form-header h2 {
+    font-size: 18px;
+    margin: 0;
+    color: #333;
+}
+
+.delete-btn, .close-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #007bff;
+    transition: color 0.2s ease;
+}
+
+.delete-btn:hover, .close-btn:hover {
+    color: #0056c1;
+}
+
+/* Photo section */
+.photo-section {
+    background: #e6f0ff;
+    padding: 20px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.photo-placeholder {
+    text-align: center;
+}
+
+.placeholder-image {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    background: #dce6f9;
+    margin-bottom: 12px;
+}
+
+.add-photo-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.add-photo-btn:hover {
+    background: #0056c1;
+}
+
+/* Form details */
+.clothes-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.clothes-details label {
+    font-size: 14px;
+    color: #4a4a4a;
+    margin-bottom: 4px;
+}
+
+input, select {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #dcdcdc;
+    font-size: 14px;
+    background: #fefefe;
+    color: #2d3748;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #007bff;
+    outline: none;
+    transition: background 0.3s ease;
+    margin-bottom: 8px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Warmness label */
+.clothes-details span {
+    font-size: 12px;
+    color: #007bff;
+    text-align: right;
+}
+
+/* Colors section */
+.colors {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 8px;
+}
+
+.color-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: 2px solid #ffffff;
+    box-shadow: 0 0 0 2px #ddd;
+    cursor: pointer;
+    transition: transform 0.2s ease, border 0.3s ease;
+}
+
+.color-btn:hover {
+    transform: scale(1.1);
+}
+
+.color-btn.selected {
+    border: 2px solid #007bff;
+}
+
+/* Save button */
+.save-btn {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 12px;
+    border-radius: 24px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: center;
+    max-width: 320px;
+    width: 100%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.save-btn:hover {
+    background: #0056c1;
+    transform: translateY(-2px);
+}

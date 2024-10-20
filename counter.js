@@ -1,24 +1,32 @@
+// Function to handle adding clothes (simulating an action)
 function addClothes() {
-    // Hide the empty state and show the loading state
     document.getElementById('emptyState').classList.add('hidden');
-    document.getElementById('loadingGrid').classList.remove('hidden');
-
-    // Simulate a delay for loading
-    setTimeout(() => {
-        // After loading, hide loading state and show the clothes grid
-        document.getElementById('loadingGrid').classList.add('hidden');
-        document.getElementById('clothesGrid').classList.remove('hidden');
-        loadClothes();
-    }, 2000); // Simulates a 2-second load time
+    // Simulate adding clothes with a message or action
+    alert('Clothes added!');
+}
+// Function to redirect to the add clothes page
+function redirectToAddPage() {
+    window.location.href = 'add-clothes.html'; // Adjust the path if needed
 }
 
-function loadClothes() {
-    const clothesGrid = document.getElementById('clothesGrid');
-    clothesGrid.innerHTML = `
-        <div class="clothes-item">Shirt #1</div>
-        <div class="clothes-item">Shirt #1</div>
-        <div class="clothes-item">Shirt #1</div>
-        <div class="clothes-item">Layer 1</div>
-        <div class="clothes-item">Layer 1</div>
-    `;
+// Function to handle active state changes for tabs and bottom navigation
+function setActiveTab(tabGroup, activeClass, selectedTab) {
+    const tabs = document.querySelectorAll(`${tabGroup} .${activeClass}`);
+    tabs.forEach(tab => tab.classList.remove(activeClass));
+    selectedTab.classList.add(activeClass);
 }
+
+// Event listener for the top tabs
+document.getElementById('tabs').addEventListener('click', function(event) {
+    if (event.target.classList.contains('tab')) {
+        setActiveTab('#tabs', 'active', event.target);
+    }
+});
+
+// Event listener for the bottom navigation buttons
+document.getElementById('bottomNav').addEventListener('click', function(event) {
+    if (event.target.closest('.nav-item')) {
+        const selectedNavItem = event.target.closest('.nav-item');
+        setActiveTab('#bottomNav', 'active', selectedNavItem);
+    }
+});

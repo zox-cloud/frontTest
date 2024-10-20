@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add Clothes</title>
+  <link rel="stylesheet" href="style/add-style.css">
+</head>
+<body>
+<div class="add-clothes-form">
+  <header class="form-header">
+    <button class="delete-btn" onclick="deleteItem()">🗑️</button>
+    <h2>Add Clothes</h2>
+    <button class="close-btn" onclick="goBack()">✖</button>
+  </header>
+  <div class="photo-section">
+    <div class="photo-placeholder">
+      <img src="placeholder.png" alt="Placeholder" class="placeholder-image">
+      <button class="add-photo-btn">+ Add Photo</button>
+    </div>
+  </div>
+  <form class="clothes-details">
+    <label for="name">Name</label>
+    <input type="text" id="name" placeholder="Name">
+
+    <label for="itemType">Item type</label>
+    <select id="itemType">
+      <option value="">Select Item Type</option>
+      <option value="shirt">Shirt</option>
+      <option value="pants">Pants</option>
+      <option value="shoes">Shoes</option>
+    </select>
+
+    <label for="itemCategory">Item category</label>
+    <select id="itemCategory">
+      <option value="">Select Item Category</option>
+      <option value="casual">Casual</option>
+      <option value="formal">Formal</option>
+      <option value="sport">Sport</option>
+    </select>
+
+    <label for="warmth">Warmness</label>
+    <input type="range" id="warmth" min="0" max="100">
+    <span>Extra Warm</span>
+
+    <label>Colors</label>
+    <div class="colors">
+      <button class="color-btn" style="background: #000;"></button>
+      <button class="color-btn" style="background: #ccc;"></button>
+      <button class="color-btn" style="background: #f0e68c;"></button>
+      <button class="color-btn" style="background: #8b4513;"></button>
+      <button class="color-btn" style="background: #b5651d;"></button>
+      <button class="color-btn" style="background: #87ceeb;"></button>
+    </div>
+
+    <button type="button" class="save-btn" onclick="saveClothes()">+ Save to wardrobe</button>
+  </form>
+</div>
+
+<script>
+  // Function to go back to the main page
+  function goBack() {
+    window.location.href = 'wardrobe.html'; // Adjust the path if needed
+  }
+
+  // Function to simulate saving clothes
+  function saveClothes() {
+    alert('Clothes saved to wardrobe!');
+    goBack();
+  }
+
+  // Function to simulate deleting an item
+  function deleteItem() {
+    alert('Item deleted');
+    goBack();
+  }
+</script>
+</body>
+</html>
