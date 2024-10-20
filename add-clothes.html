@@ -1,3 +1,84 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Add Clothes</title>-->
+<!--  <link rel="stylesheet" href="style/add-style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="add-clothes-form">-->
+<!--  <header class="form-header">-->
+<!--    <button class="delete-btn" onclick="deleteItem()">🗑️</button>-->
+<!--    <h2>Add Clothes</h2>-->
+<!--    <button class="close-btn" onclick="goBack()">✖</button>-->
+<!--  </header>-->
+<!--  <div class="photo-section">-->
+<!--    <div class="photo-placeholder">-->
+<!--      <img src="placeholder.png" alt="Placeholder" class="placeholder-image">-->
+<!--      <button class="add-photo-btn">+ Add Photo</button>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <form class="clothes-details">-->
+<!--    <label for="name">Name</label>-->
+<!--    <input type="text" id="name" placeholder="Name">-->
+
+<!--    <label for="itemType">Item type</label>-->
+<!--    <select id="itemType">-->
+<!--      <option value="">Select Item Type</option>-->
+<!--      <option value="shirt">Shirt</option>-->
+<!--      <option value="pants">Pants</option>-->
+<!--      <option value="shoes">Shoes</option>-->
+<!--    </select>-->
+
+<!--    <label for="itemCategory">Item category</label>-->
+<!--    <select id="itemCategory">-->
+<!--      <option value="">Select Item Category</option>-->
+<!--      <option value="casual">Casual</option>-->
+<!--      <option value="formal">Formal</option>-->
+<!--      <option value="sport">Sport</option>-->
+<!--    </select>-->
+
+<!--    <label for="warmth">Warmness</label>-->
+<!--    <input type="range" id="warmth" min="0" max="100">-->
+<!--    <span>Extra Warm</span>-->
+
+<!--    <label>Colors</label>-->
+<!--    <div class="colors">-->
+<!--      <button class="color-btn" style="background: #000;"></button>-->
+<!--      <button class="color-btn" style="background: #ccc;"></button>-->
+<!--      <button class="color-btn" style="background: #f0e68c;"></button>-->
+<!--      <button class="color-btn" style="background: #8b4513;"></button>-->
+<!--      <button class="color-btn" style="background: #b5651d;"></button>-->
+<!--      <button class="color-btn" style="background: #87ceeb;"></button>-->
+<!--    </div>-->
+
+<!--    <button type="button" class="save-btn" onclick="saveClothes()">+ Save to wardrobe</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  // Function to go back to the main page-->
+<!--  function goBack() {-->
+<!--    window.location.href = 'wardrobe.html'; // Adjust the path if needed-->
+<!--  }-->
+
+<!--  // Function to simulate saving clothes-->
+<!--  function saveClothes() {-->
+<!--    alert('Clothes saved to wardrobe!');-->
+<!--    goBack();-->
+<!--  }-->
+
+<!--  // Function to simulate deleting an item-->
+<!--  function deleteItem() {-->
+<!--    alert('Item deleted');-->
+<!--    goBack();-->
+<!--  }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +90,7 @@
 <body>
 <div class="add-clothes-form">
   <header class="form-header">
-    <button class="delete-btn" onclick="deleteItem()">🗑️</button>
+    <button class="delete-btn" onclick="goBack()">🗑️</button>
     <h2>Add Clothes</h2>
     <button class="close-btn" onclick="goBack()">✖</button>
   </header>
@@ -19,12 +100,12 @@
       <button class="add-photo-btn">+ Add Photo</button>
     </div>
   </div>
-  <form class="clothes-details">
+  <form class="clothes-details" id="clothesForm">
     <label for="name">Name</label>
-    <input type="text" id="name" placeholder="Name">
+    <input type="text" id="name" placeholder="Name" required>
 
     <label for="itemType">Item type</label>
-    <select id="itemType">
+    <select id="itemType" required>
       <option value="">Select Item Type</option>
       <option value="shirt">Shirt</option>
       <option value="pants">Pants</option>
@@ -32,7 +113,7 @@
     </select>
 
     <label for="itemCategory">Item category</label>
-    <select id="itemCategory">
+    <select id="itemCategory" required>
       <option value="">Select Item Category</option>
       <option value="casual">Casual</option>
       <option value="formal">Formal</option>
@@ -40,17 +121,17 @@
     </select>
 
     <label for="warmth">Warmness</label>
-    <input type="range" id="warmth" min="0" max="100">
+    <input type="range" id="warmth" min="0" max="100" value="50">
     <span>Extra Warm</span>
 
     <label>Colors</label>
     <div class="colors">
-      <button class="color-btn" style="background: #000;"></button>
-      <button class="color-btn" style="background: #ccc;"></button>
-      <button class="color-btn" style="background: #f0e68c;"></button>
-      <button class="color-btn" style="background: #8b4513;"></button>
-      <button class="color-btn" style="background: #b5651d;"></button>
-      <button class="color-btn" style="background: #87ceeb;"></button>
+      <button class="color-btn" style="background: #000;" data-color="#000"></button>
+      <button class="color-btn" style="background: #ccc;" data-color="#ccc"></button>
+      <button class="color-btn" style="background: #f0e68c;" data-color="#f0e68c"></button>
+      <button class="color-btn" style="background: #8b4513;" data-color="#8b4513"></button>
+      <button class="color-btn" style="background: #b5651d;" data-color="#b5651d"></button>
+      <button class="color-btn" style="background: #87ceeb;" data-color="#87ceeb"></button>
     </div>
 
     <button type="button" class="save-btn" onclick="saveClothes()">+ Save to wardrobe</button>
@@ -58,22 +139,53 @@
 </div>
 
 <script>
-  // Function to go back to the main page
   function goBack() {
     window.location.href = 'wardrobe.html'; // Adjust the path if needed
   }
 
-  // Function to simulate saving clothes
   function saveClothes() {
-    alert('Clothes saved to wardrobe!');
+    const name = document.getElementById('name').value;
+    const itemType = document.getElementById('itemType').value;
+    const itemCategory = document.getElementById('itemCategory').value;
+    const warmth = document.getElementById('warmth').value;
+    const selectedColor = document.querySelector('.color-btn.selected');
+
+    // Check if all required fields are filled
+    if (!name || !itemType || !itemCategory || !selectedColor) {
+      alert('Please fill out all fields and select a color.');
+      return;
+    }
+
+    const color = selectedColor.getAttribute('data-color');
+
+    // Create a new item object
+    const newItem = {
+      name,
+      itemType,
+      itemCategory,
+      warmth,
+      color,
+      photo: 'placeholder.png' // Replace with the actual photo path if photo upload is implemented
+    };
+
+    // Get existing items from localStorage or create an empty array if none exist
+    const existingItems = JSON.parse(localStorage.getItem('wardrobeItems')) || [];
+    existingItems.push(newItem);
+
+    // Save the updated list back to localStorage
+    localStorage.setItem('wardrobeItems', JSON.stringify(existingItems));
+
+    // Redirect back to wardrobe page
     goBack();
   }
 
-  // Function to simulate deleting an item
-  function deleteItem() {
-    alert('Item deleted');
-    goBack();
-  }
+  // Select color
+  document.querySelectorAll('.color-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+      document.querySelectorAll('.color-btn').forEach(b => b.classList.remove('selected'));
+      this.classList.add('selected');
+    });
+  });
 </script>
 </body>
 </html>
