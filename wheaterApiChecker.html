@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather Info</title>
+    <style>
+        #weatherInfo {
+            font-family: Arial, sans-serif;
+            margin-top: 20px;
+        }
+        #icon {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+<h1>Weather Information</h1>
+<button onclick="getWeather()">Get Weather</button>
+<div id="weatherInfo">
+    <h2 id="location"></h2>
+    <img id="icon" src="" alt="Weather Icon">
+    <p id="description"></p>
+    <p id="temperature"></p>
+</div>
+
+<script>
+    async function getWeather() {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(async (position) => {
+                const lat = position.coords.latitude;
+                const lon = position.coords.longitude;
+                const apiKey = 'd31e50190104c1c8594466f52a759f12';
+                const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${apiKey}&units=metric`;
+
+                try {
+                    const response = await fetch(apiUrl);
+                    const data = await response.json();
+
+                    if (data.cod !== 200) {
+                        alert('Failed to fetch weather data!');
+                        return;
+                    }
+
+                    displayWeather(data);
+                } catch (error) {
+                    console.error('Error fetching the weather data:', error);
+                    alert('Failed to fetch weather data.');
+                }
+            }, () => {
+                alert('Geolocation permission denied. Unable to fetch weather data.');
+            });
+        } else {
+            alert('Geolocation is not supported by your browser.');
+        }
+    }
+
+    function displayWeather(data) {
+        const locationElement = document.getElementById('location');
+        const descriptionElement = document.getElementById('description');
+        const temperatureElement = document.getElementById('temperature');
+        const iconElement = document.getElementById('icon');
+
+        const city = data.name;
+        const country = data.sys.country;
+        const description = data.weather[0].description;
+        const temperature = data.main.temp;
+        const weatherMain = data.weather[0].main.toLowerCase();
+
+        locationElement.textContent = `${city}, ${country}`;
+        descriptionElement.textContent = `Weather: ${description}`;
+        temperatureElement.textContent = `Temperature: ${temperature}°C`;
+
+        // Change icon based on the weather condition
+        if (weatherMain.includes('cloud')) {
+            iconElement.src = 'icons/cloud.png';
+        } else if (weatherMain.includes('sun') || weatherMain.includes('clear')) {
+            iconElement.src = 'icons/sun.png';
+        } else {
+            iconElement.src = 'icons/default.png'; // Fallback icon
+        }
+    }
+</script>
+</body>
+</html>

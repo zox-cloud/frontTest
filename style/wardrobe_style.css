@@ -148,18 +148,6 @@ body {
     background-image: url('../icons/profile.svg'); /* Replace with your icon path */
 }
 
-
-/* Responsive adjustments */
-@media (min-width: 480px) {
-    .tabs {
-        justify-content: center;
-    }
-
-    .tab {
-        margin-right: 15px;
-    }
-}
-
 .hidden {
     display: none;
 }
@@ -200,3 +188,16 @@ body {
         background-color: #e0e0e0;
     }
 }
+
+
+/* Responsive adjustments */
+@media (min-width: 480px) {
+    .tabs {
+        justify-content: center;
+    }
+
+    .tab {
+        margin-right: 15px;
+    }
+}
+

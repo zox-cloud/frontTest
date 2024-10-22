@@ -1,84 +1,3 @@
-<!--<!DOCTYPE html>-->
-<!--<html lang="en">-->
-<!--<head>-->
-<!--  <meta charset="UTF-8">-->
-<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
-<!--  <title>Add Clothes</title>-->
-<!--  <link rel="stylesheet" href="style/add-style.css">-->
-<!--</head>-->
-<!--<body>-->
-<!--<div class="add-clothes-form">-->
-<!--  <header class="form-header">-->
-<!--    <button class="delete-btn" onclick="deleteItem()">🗑️</button>-->
-<!--    <h2>Add Clothes</h2>-->
-<!--    <button class="close-btn" onclick="goBack()">✖</button>-->
-<!--  </header>-->
-<!--  <div class="photo-section">-->
-<!--    <div class="photo-placeholder">-->
-<!--      <img src="placeholder.png" alt="Placeholder" class="placeholder-image">-->
-<!--      <button class="add-photo-btn">+ Add Photo</button>-->
-<!--    </div>-->
-<!--  </div>-->
-<!--  <form class="clothes-details">-->
-<!--    <label for="name">Name</label>-->
-<!--    <input type="text" id="name" placeholder="Name">-->
-
-<!--    <label for="itemType">Item type</label>-->
-<!--    <select id="itemType">-->
-<!--      <option value="">Select Item Type</option>-->
-<!--      <option value="shirt">Shirt</option>-->
-<!--      <option value="pants">Pants</option>-->
-<!--      <option value="shoes">Shoes</option>-->
-<!--    </select>-->
-
-<!--    <label for="itemCategory">Item category</label>-->
-<!--    <select id="itemCategory">-->
-<!--      <option value="">Select Item Category</option>-->
-<!--      <option value="casual">Casual</option>-->
-<!--      <option value="formal">Formal</option>-->
-<!--      <option value="sport">Sport</option>-->
-<!--    </select>-->
-
-<!--    <label for="warmth">Warmness</label>-->
-<!--    <input type="range" id="warmth" min="0" max="100">-->
-<!--    <span>Extra Warm</span>-->
-
-<!--    <label>Colors</label>-->
-<!--    <div class="colors">-->
-<!--      <button class="color-btn" style="background: #000;"></button>-->
-<!--      <button class="color-btn" style="background: #ccc;"></button>-->
-<!--      <button class="color-btn" style="background: #f0e68c;"></button>-->
-<!--      <button class="color-btn" style="background: #8b4513;"></button>-->
-<!--      <button class="color-btn" style="background: #b5651d;"></button>-->
-<!--      <button class="color-btn" style="background: #87ceeb;"></button>-->
-<!--    </div>-->
-
-<!--    <button type="button" class="save-btn" onclick="saveClothes()">+ Save to wardrobe</button>-->
-<!--  </form>-->
-<!--</div>-->
-
-<!--<script>-->
-<!--  // Function to go back to the main page-->
-<!--  function goBack() {-->
-<!--    window.location.href = 'wardrobe.html'; // Adjust the path if needed-->
-<!--  }-->
-
-<!--  // Function to simulate saving clothes-->
-<!--  function saveClothes() {-->
-<!--    alert('Clothes saved to wardrobe!');-->
-<!--    goBack();-->
-<!--  }-->
-
-<!--  // Function to simulate deleting an item-->
-<!--  function deleteItem() {-->
-<!--    alert('Item deleted');-->
-<!--    goBack();-->
-<!--  }-->
-<!--</script>-->
-<!--</body>-->
-<!--</html>-->
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -189,3 +108,148 @@
 </script>
 </body>
 </html>
+
+
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--  <meta charset="UTF-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--  <title>Add Clothes</title>-->
+<!--  <link rel="stylesheet" href="style/add-style.css">-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="add-clothes-form">-->
+<!--  <header class="form-header">-->
+<!--    <button class="delete-btn" onclick="deleteItem()">🗑️</button>-->
+<!--    <h2>Add Clothes</h2>-->
+<!--    <button class="close-btn" onclick="goBack()">✖</button>-->
+<!--  </header>-->
+<!--  <div class="photo-section" id="photoSection">-->
+<!--    <div class="photo-placeholder">-->
+<!--      <img src="placeholder.png" alt="Placeholder" class="placeholder-image" id="photoPreview">-->
+<!--      <input type="file" id="photoInput" accept="image/*" style="display: none;" onchange="previewPhoto()">-->
+<!--      <button class="add-photo-btn" onclick="document.getElementById('photoInput').click()">+ Add Photo</button>-->
+<!--      <p class="error-message" id="photoError">Photo must be added</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <form class="clothes-details" onsubmit="return validateForm()">-->
+<!--    <label for="name">Name</label>-->
+<!--    <input type="text" id="name" placeholder="Name">-->
+<!--    <p class="error-message" id="nameError">Name must be provided</p>-->
+
+<!--    <label for="itemType">Item type</label>-->
+<!--    <select id="itemType">-->
+<!--      <option value="">Select Item Type</option>-->
+<!--      <option value="shirt">Shirt</option>-->
+<!--      <option value="pants">Pants</option>-->
+<!--      <option value="shoes">Shoes</option>-->
+<!--    </select>-->
+<!--    <p class="error-message" id="itemTypeError">Type must be selected</p>-->
+
+<!--    <label for="itemCategory">Item category</label>-->
+<!--    <select id="itemCategory">-->
+<!--      <option value="">Select Item Category</option>-->
+<!--      <option value="casual">Casual</option>-->
+<!--      <option value="formal">Formal</option>-->
+<!--      <option value="sport">Sport</option>-->
+<!--    </select>-->
+<!--    <p class="error-message" id="itemCategoryError">Category must be selected</p>-->
+
+<!--    <label for="warmth">Warmness</label>-->
+<!--    <input type="range" id="warmth" min="0" max="100">-->
+<!--    <span>Extra Warm</span>-->
+
+<!--    <label>Colors</label>-->
+<!--    <div class="colors">-->
+<!--      <button class="color-btn" style="background: #000;"></button>-->
+<!--      <button class="color-btn" style="background: #ccc;"></button>-->
+<!--      <button class="color-btn" style="background: #f0e68c;"></button>-->
+<!--      <button class="color-btn" style="background: #8b4513;"></button>-->
+<!--      <button class="color-btn" style="background: #b5651d;"></button>-->
+<!--      <button class="color-btn" style="background: #87ceeb;"></button>-->
+<!--    </div>-->
+
+<!--    <button type="submit" class="save-btn">+ Save to wardrobe</button>-->
+<!--  </form>-->
+<!--</div>-->
+
+<!--<script>-->
+<!--  function goBack() {-->
+<!--    window.location.href = 'wardrobe.html'; // Adjust the path if needed-->
+<!--  }-->
+
+<!--  function validateForm() {-->
+<!--    const name = document.getElementById('name').value.trim();-->
+<!--    const itemType = document.getElementById('itemType').value;-->
+<!--    const itemCategory = document.getElementById('itemCategory').value;-->
+<!--    const photoPreview = document.getElementById('photoPreview').src;-->
+
+<!--    let isValid = true;-->
+
+<!--    // Validate photo-->
+<!--    if (photoPreview.includes('placeholder.png')) {-->
+<!--      document.getElementById('photoError').style.display = 'block';-->
+<!--      document.getElementById('photoSection').style.backgroundColor = '#fde8e8';-->
+<!--      isValid = false;-->
+<!--    } else {-->
+<!--      document.getElementById('photoError').style.display = 'none';-->
+<!--      document.getElementById('photoSection').style.backgroundColor = 'transparent';-->
+<!--    }-->
+
+<!--    // Validate name-->
+<!--    if (name === '') {-->
+<!--      document.getElementById('nameError').style.display = 'block';-->
+<!--      document.getElementById('name').style.borderColor = '#f00';-->
+<!--      isValid = false;-->
+<!--    } else {-->
+<!--      document.getElementById('nameError').style.display = 'none';-->
+<!--      document.getElementById('name').style.borderColor = '#ccc';-->
+<!--    }-->
+
+<!--    // Validate item type-->
+<!--    if (itemType === '') {-->
+<!--      document.getElementById('itemTypeError').style.display = 'block';-->
+<!--      document.getElementById('itemType').style.borderColor = '#f00';-->
+<!--      isValid = false;-->
+<!--    } else {-->
+<!--      document.getElementById('itemTypeError').style.display = 'none';-->
+<!--      document.getElementById('itemType').style.borderColor = '#ccc';-->
+<!--    }-->
+
+<!--    // Validate item category-->
+<!--    if (itemCategory === '') {-->
+<!--      document.getElementById('itemCategoryError').style.display = 'block';-->
+<!--      document.getElementById('itemCategory').style.borderColor = '#f00';-->
+<!--      isValid = false;-->
+<!--    } else {-->
+<!--      document.getElementById('itemCategoryError').style.display = 'none';-->
+<!--      document.getElementById('itemCategory').style.borderColor = '#ccc';-->
+<!--    }-->
+
+<!--    return isValid;-->
+<!--  }-->
+
+<!--  function previewPhoto() {-->
+<!--    const photoInput = document.getElementById('photoInput');-->
+<!--    const photoPreview = document.getElementById('photoPreview');-->
+
+<!--    if (photoInput.files && photoInput.files[0]) {-->
+<!--      const reader = new FileReader();-->
+
+<!--      reader.onload = function(e) {-->
+<!--        photoPreview.src = e.target.result;-->
+<!--        photoPreview.classList.remove('placeholder-image');-->
+<!--      };-->
+
+<!--      reader.readAsDataURL(photoInput.files[0]);-->
+<!--    }-->
+<!--  }-->
+
+<!--  function deleteItem() {-->
+<!--    alert('Item deleted');-->
+<!--    goBack();-->
+<!--  }-->
+<!--</script>-->
+<!--</body>-->
+<!--</html>-->
